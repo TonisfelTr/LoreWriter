@@ -35,6 +35,9 @@ sponge {
             loadOrder(org.spongepowered.plugin.metadata.model.PluginDependency.LoadOrder.AFTER)
             optional(false)
         }
+        contributor("Elfieray") {
+            description("Lead developer")
+        }
     }
 }
 

@@ -23,7 +23,7 @@ public class ChestLoggerListener {
         this.logManager = logManager;
     }
 
-    // Открытие контейнера
+    
     @Listener
     public void onContainerOpen(InteractContainerEvent.Open event) {
         Optional<ServerPlayer> playerOpt = event.cause().first(ServerPlayer.class);
@@ -31,7 +31,7 @@ public class ChestLoggerListener {
 
         ServerPlayer player = playerOpt.get();
 
-        // Получение местоположения контейнера
+        
         Optional<ServerLocation> locationOpt = event.cause().first(ServerLocation.class);
 
         if (!locationOpt.isPresent()) return;
@@ -42,7 +42,7 @@ public class ChestLoggerListener {
         logAction(player.name(), "открыл контейнер", location, blockType);
     }
 
-    // Закрытие контейнера
+    
     @Listener
     public void onContainerClose(InteractContainerEvent.Close event) {
         Optional<ServerPlayer> playerOpt = event.cause().first(ServerPlayer.class);
@@ -60,7 +60,7 @@ public class ChestLoggerListener {
         logAction(player.name(), "закрыл контейнер", location, blockType);
     }
 
-    // Извлечение предметов из контейнера
+    
     @Listener
     public void onItemTaken(ClickContainerEvent event) {
         Optional<ServerPlayer> playerOpt = event.cause().first(ServerPlayer.class);

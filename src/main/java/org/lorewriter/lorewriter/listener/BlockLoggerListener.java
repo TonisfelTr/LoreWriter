@@ -34,7 +34,6 @@ public class BlockLoggerListener {
         for (Transaction<BlockSnapshot> transaction : event.transactions()) {
             if (!transaction.isValid()) continue;
 
-            // Игнорируем транзакции без реальных изменений
             if (transaction.original().state().equals(transaction.finalReplacement().state())) {
                 continue;
             }

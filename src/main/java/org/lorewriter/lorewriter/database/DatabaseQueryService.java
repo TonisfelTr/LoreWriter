@@ -16,7 +16,7 @@ public class DatabaseQueryService {
     private final Logger logger;
 
     public DatabaseQueryService(String host, int port, String database, String username, String password, PluginContainer plugin, Logger logger) {
-        this.jdbcUrl = String.format("jdbc:mysql://%s:%d/%s?useSSL=false&serverTimezone=UTC", host, port, database);
+        this.jdbcUrl = String.format("jdbc:mysql:
         this.username = username;
         this.password = password;
         this.plugin = plugin;

@@ -14,20 +14,20 @@ public class LorewriterCommands {
     public static Command.Parameterized lwCommand() {
         return Command.builder()
                 .executor(context -> {
-                    // Проверка: выполняет игрок
+                    
                     ServerPlayer player = context.cause().first(ServerPlayer.class)
                             .orElseThrow(() -> new CommandException(Component.text("Эту команду можно использовать только в игре!")));
 
-                    // Создаём блок бедрока
+                    
                     ItemStack bedrock = ItemStack.builder()
                             .itemType(ItemTypes.BEDROCK)
                             .quantity(1)
                             .build();
 
-                    // Пытаемся положить в инвентарь
+                    
                     player.inventory().offer(bedrock);
 
-                    // Сообщение игроку
+                    
                     player.sendMessage(Component.text("Вы получили специальный блок для проверки!"));
 
                     return CommandResult.success();

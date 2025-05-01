@@ -25,7 +25,7 @@ public class ConfigManager {
                     .build();
 
             if (!Files.exists(configFile)) {
-                // Создаём дефолтный конфиг
+                
                 ConfigurationNode node = loader.load();
                 node.node("logBlockBreaks").set(true);
                 node.node("logBlockPlaces").set(true);
@@ -37,7 +37,7 @@ public class ConfigManager {
                 loader.save(node);
             }
 
-            // Загружаем текущий конфиг
+            
             rootNode = loader.load();
 
         } catch (IOException e) {

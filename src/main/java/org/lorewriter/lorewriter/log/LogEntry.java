@@ -16,7 +16,7 @@ public class LogEntry {
         this.x = x;
         this.y = y;
         this.z = z;
-        this.blockType = blockType; // <-- запоминаем
+        this.blockType = blockType; 
         this.timestamp = timestamp;
     }
 
@@ -27,9 +27,9 @@ public class LogEntry {
         this.x = x;
         this.y = y;
         this.z = z;
-        this.blockType = blockType; // <-- запоминаем
+        this.blockType = blockType; 
         this.timestamp = timestamp;
-        this.quantity = quantity; // <-- запоминаем
+        this.quantity = quantity; 
     }
 
     public String getPlayer() {
@@ -56,7 +56,7 @@ public class LogEntry {
         return z;
     }
 
-    public String getBlockType() { // <-- добавляем геттер
+    public String getBlockType() { 
         return blockType;
     }
 

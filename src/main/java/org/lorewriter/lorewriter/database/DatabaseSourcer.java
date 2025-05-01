@@ -11,13 +11,13 @@ public class DatabaseSourcer {
     private final String jdbcUrl;
 
     public DatabaseSourcer(String host, int port, String database, String username, String password, Logger logger) {
-        // Формируем URL подключения напрямую
+        
         this.jdbcUrl = String.format(
-                "jdbc:mysql://%s:%d/%s?user=%s&password=%s&useSSL=false&serverTimezone=UTC",
+                "jdbc:mysql:
                 host, port, database, username, password
         );
 
-        // Проверка доступности MySQL драйвера при запуске плагина
+        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             logger.info("[LoreWriter] JDBC драйвер MySQL успешно загружен.");
@@ -26,7 +26,7 @@ public class DatabaseSourcer {
             throw new IllegalStateException("MySQL JDBC driver не найден!");
         }
 
-        // Тестовое подключение к БД
+        
         try (Connection connection = getConnection()) {
             logger.info("[LoreWriter] Успешное подключение к базе данных через JDBC!");
         } catch (SQLException e) {

@@ -31,7 +31,7 @@ public class Lorewriter {
     @Inject
     public Lorewriter(final PluginContainer container) {
         this.container = container;
-        this.logger = container.logger(); // вот так достаём логгер
+        this.logger = container.logger(); 
     }
 
     @Listener
